@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cybersecurity Superhero: I Fight Hackers So You Don&#x27;t Have To!</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="14350409-3da4-4be6-ac21-cbf26936fada" class="page sans"><header><h1 class="page-title">Cybersecurity Superhero: I Fight Hackers So You Don&#x27;t Have To!</h1><p class="page-description"></p></header><div class="page-body"><div id="3c73372a-37b4-4f93-a311-238da45e4cc1" class="column-list"><div id="eaa7c424-0be4-47b0-90a2-93e3e6b3392b" style="width:50%" class="column"><figure id="681c52ec-b9da-4dd4-9125-16c79627d50c" class="image"><a href="Cybersecurity%20Superhero%20I%20Fight%20Hackers%20So%20You%20Don%20143504093da44be6ac21cbf26936fada/5ddb9ac2-96dd-42d1-96b1-af8628f5dd41.png"><img style="width:478.3258594917788px" src="Cybersecurity%20Superhero%20I%20Fight%20Hackers%20So%20You%20Don%20143504093da44be6ac21cbf26936fada/5ddb9ac2-96dd-42d1-96b1-af8628f5dd41.png"/></a></figure></div><div id="34e8faea-78b6-4861-9ee2-35ef15cdcfa6" style="width:50%" class="column"><h3 id="9cb5704b-d3ca-4e18-a87e-42b6ffb948f1" class=""><strong>Hello there! </strong></h3><p id="c0adb6d0-2318-471c-afc7-b7cea57cb3e9" class="">I’m a cybersecurity ninja by day, code tinkerer by night—master of OSINT, CTI, and all the fancy tools that make hackers nervous! 🐍🔒 With a Master’s in Cybersecurity from UMD, I’ve perfected the art of spotting threats and solving problems faster than a phishing email. When I’m not busy securing systems, you’ll find me writing blogs to share my knowledge and keep the cyber community sharp! Let’s team up and make hackers wish they picked another career! 🌐💻✍️</p></div></div><h3 id="c126d37a-04f9-4c50-a405-17ce2d90b52e" class=""><strong>How Hacking My Wi-Fi Led to a Cybersecurity Career: A Tale of Rebellion and Redemption</strong> 😎💻</h3><p id="ce13d44f-147b-42c4-b3b7-7382ca7514bb" class="">My interest in cybersecurity started when I tried to outsmart my dad’s Wi-Fi restrictions during exams (for <em>educational purposes</em>, of course!). After finding a YouTube tutorial on how to extract saved Wi-Fi passwords, I successfully hacked into my brother’s device like a mini mastermind. Unfortunately, my success was short-lived when I failed miserably on the next device—it was humbling, to say the least. This early curiosity led me down the rabbit hole of programming, and then <em>Mr. Robot</em> came along, confirming my life’s calling: cybersecurity. Who knew rebellion could turn into a career path? 😎💻</p><h3 id="42d64f66-a109-4274-8810-aee5354b2af1" class="">WHY I THINK YOU SHOULD HIRE ME………………….</h3><p id="411f0191-d687-4f9e-865a-f42d6ec79a39" class="">Because who wouldn’t want a cybersecurity ninja on their team? 🥷💻 I can spot a phishing scam faster than you can say “malware.” With a Master’s in Cybersecurity and a knack for turning coffee into code, I’ve mastered the art of outsmarting hackers and making systems safer than a vault with laser beams! Plus, I write killer blogs when I’m not busy making cybercriminals regret the day they ever crossed paths with me. So, hire me, and let’s turn those cyber threats into yesterday’s news! 🌐🔒🎯</p><div id="dc1a908f-1c69-4fdc-b905-e2b556a2a955" class="column-list"><div id="82300216-023a-494d-a7e5-ca0e716f340a" style="width:50%" class="column"><p id="e4343ab4-c13d-4c39-8bc1-ea8cae1300b1" class=""><strong>WHAT DO I BRING TO THE TABLE?</strong> 🍽️</p></div><div id="de004ad5-6b3d-482b-b5fc-86a27005f256" style="width:50%" class="column"><p id="1323279a-f778-45e6-8049-7d764292baae" class=""><strong>WHAT I CAN HELP YOU WITH:</strong> 🤔</p></div></div><div id="b5a90e10-bdfe-488e-9af4-8cbf477ff93d" class="column-list"><div id="443e1491-ec8d-4822-b858-91ef94341f42" style="width:50%" class="column"><p id="73ab2b87-bb04-4acb-a293-20aa195dceaa" class="">I bring a unique blend of cybersecurity expertise and a dash of humor to every project! 😄</p><p id="580e6530-7dd5-4a1c-aedf-8fb8eb21c07e" class="">With my background in threat hunting, vulnerability assessment, and risk management, I can whip up a mean cybersecurity strategy that will leave hackers scratching their heads. 🤔💻</p><p id="7dd40bc1-8a64-40c3-bfb0-f41be8128f03" class="">Plus, I&#x27;ve got a secret ingredient: a knack for Python automation that can optimize your security processes faster than you can say &quot;zero-day exploit&quot;! 🐍💨</p><p id="e9eea312-f24e-4254-bc5a-13ecc31fe83d" class="">Oh, and did I mention I also bring donuts? 🍩 Because every successful cybersecurity team runs on caffeine and sugar. ☕🍬</p></div><div id="d5943967-172b-4799-b80c-1015f67d70ba" style="width:50%" class="column"><p id="ade00db1-b2b6-4343-824b-b46507c1d28a" class="">I&#x27;m your go-to cybersecurity superhero, ready to defend your digital world with a smile! 😄</p><p id="5c2f8009-daa3-49a9-9522-c50486170674" class="">From threat intelligence to vulnerability assessments, cloud security, and Python automation, I’ll keep your systems safe and efficient. 🛡️🐍 Whether it&#x27;s fine-tuning SIEM alerts or crafting ironclad cybersecurity strategies, I’ve got you covered. 🚀</p><p id="d62b690d-7b3a-4354-b76b-b1cd1456c774" class="">Oh, and I’ll make sure the hackers are left scratching their heads while you enjoy your coffee. ☕🍩 </p><p id="80794d35-4440-4a22-a758-7fc02417ae96" class="">So, if you want to keep your digital fortress secure and have a few laughs along the way, I&#x27;m your guy! 😎👨‍💻</p><p id="f95bf267-2f7e-4ecf-8687-e35ced866ce0" class="">
+</p></div></div><p id="a06cc082-8510-478a-a246-21cd88121ee5" class="">I’m eager to sprinkle some cybersecurity magic on your organization’s security posture and chase away those digital gremlins. Let’s chat about how I can help keep your digital world safe and sound! 🌐🛡️</p><h3 id="c52dfce6-8e7a-4f6f-a8d3-938d3c516fab" class=""><strong>My Strength</strong></h3><div id="12088606-271a-49b2-844a-7f1bb85e8ee6" class="column-list"><div id="a9cb2661-17aa-4c2b-8f9d-a4dbab692137" style="width:33.333333333333336%" class="column"><ul id="2f030ff5-4f70-46e2-ad19-0e53b762e10b" class="bulleted-list"><li style="list-style-type:disc"><strong>Willingness to Learn</strong> 📚</li></ul><ul id="56e3bcb6-3776-4f75-b8de-b4c80fd96313" class="bulleted-list"><li style="list-style-type:disc"><strong>Communication</strong> 🗣️</li></ul><ul id="140a5a86-7520-4940-9ed7-6204b5bf4b98" class="bulleted-list"><li style="list-style-type:disc"><strong>Team Player</strong> 🤝</li></ul></div><div id="6f58feb5-d452-499c-9c9e-fbf5dac0ccd1" style="width:33.333333333333336%" class="column"><ul id="5496cecf-9f0d-4d0a-8cce-d90b8665cfe3" class="bulleted-list"><li style="list-style-type:disc"><strong>Innovation</strong> 💡</li></ul><ul id="a37495e8-285f-4af6-a726-a1c0feb70564" class="bulleted-list"><li style="list-style-type:disc"><strong>Leadership</strong> 🧑‍🎤</li></ul><ul id="8abf6b72-7b45-4a1d-a7d4-4635ff1f0dc7" class="bulleted-list"><li style="list-style-type:disc"><strong>Problem-Solving</strong> 🧩</li></ul></div><div id="627cd63d-8daf-4eba-99f4-2cf30c18987a" style="width:33.33333333333333%" class="column"><ul id="f561ccce-565f-43b7-8d4f-0d58841d9ea1" class="bulleted-list"><li style="list-style-type:disc"><strong>Team Work</strong> 🤗</li></ul><ul id="ac371b84-6752-4ea4-8050-9b0f1e64a65d" class="bulleted-list"><li style="list-style-type:disc"><strong>Adaptability</strong> 🔄</li></ul><ul id="5caf2a06-8847-480b-983c-c1bafe5a3264" class="bulleted-list"><li style="list-style-type:disc"><strong>Time Management</strong> ⏰</li></ul></div></div><h3 id="be7016ed-e258-4c9b-b87c-59aadb7316ad" class=""><strong>Ready to Collaborate and Save the Digital World</strong></h3><div id="bc1fe33b-7b9f-4e0c-891d-76287d66c31d" class="column-list"><div id="5a77a23e-6bc5-4e98-9967-caccd94f4aed" style="width:50%" class="column"><p id="f21fa863-f986-4629-ac48-66be7c266ea8" class="">If you have any projects, job opportunities, or teams looking for a cybersecurity wizard 🧙‍♂️ to join forces with, look no further! I&#x27;m eager to collaborate and bring my skills to the table. Whether it&#x27;s tackling new challenges or brainstorming innovative solutions, I’m all in!</p><p id="1ad2665c-6ebe-4130-88d6-c63f8681d2b7" class="">Also, if you’re a fan of Manchester United or Real Madrid, or if you want to debate why Ronaldo is better than Messi, let’s chat! ⚽💬</p><p id="aef6bd2b-a7bb-417a-a817-4d7742aecadd" class="">And, if you’re up for a 50-meter freestyle or backstroke race, I’m your guy. My best time is 26.80 seconds, and I’m ready to prove it! 🏊‍♂️💨</p></div><div id="b982ca9a-450f-43cd-ad9f-e403d43a096b" style="width:50%" class="column"><p id="19f66f6f-ebf4-47fd-a745-44fedee1161d" class=""><strong>Get in Touch:</strong></p><ul id="239b6993-f53d-4c28-a444-0862b938997b" class="bulleted-list"><li style="list-style-type:disc">📧 <strong>Email:</strong> harshvanasiwala18@gmail.com</li></ul><ul id="aeb28f53-74a0-470f-af74-3f371dd61649" class="bulleted-list"><li style="list-style-type:disc">🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/harsh-vanasiwala18/?trk=opento_sprofile_pfeditor">Harsh Vanasiwala</a></li></ul><p id="1e271776-5de2-458a-8134-52a746d395eb" class="">Let’s connect and make magic happen together! 🌟🔒</p><p id="0dd83655-aa7b-47c2-8569-8c3a870d310a" class="">
+</p><figure id="d386ea81-7c78-40cf-a0e7-056fde1f4652" class="link-to-page"><a href="Cybersecurity%20Superhero%20I%20Fight%20Hackers%20So%20You%20Don%20143504093da44be6ac21cbf26936fada/My%20Resume%20d386ea817c7840cfa0e7056fde1f4652.html"><img class="icon" src="https://www.notion.so/icons/document_gray.svg"/>My Resume</a></figure><figure id="24938ab3-793e-4ddc-ae78-3379a62b50d4" class="link-to-page"><a href="Cybersecurity%20Superhero%20I%20Fight%20Hackers%20So%20You%20Don%20143504093da44be6ac21cbf26936fada/Projects%2024938ab3793e4ddcae783379a62b50d4.html"><img class="icon" src="https://www.notion.so/icons/briefcase_gray.svg"/>Projects</a></figure><figure id="0a19ffb5-7aaa-4076-9b4b-beb7974fce50" class="link-to-page"><a href="Cybersecurity%20Superhero%20I%20Fight%20Hackers%20So%20You%20Don%20143504093da44be6ac21cbf26936fada/Publications%200a19ffb57aaa40769b4bbeb7974fce50.html"><img class="icon" src="https://www.notion.so/icons/news_gray.svg"/>Publications</a></figure></div></div><hr id="aa5c9096-0bff-4f8c-8fad-51abc3f98916"/><p id="934e0d4a-448e-405a-90ca-d1975ac7b861" class="">
+</p><p id="552e050b-c075-4ec0-8798-fc9e4ba97042" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
